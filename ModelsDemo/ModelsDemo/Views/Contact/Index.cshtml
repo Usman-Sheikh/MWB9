@@ -1,0 +1,31 @@
+﻿@model ModelsDemo.Models.ContactMessage
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Contact", FormMethod.Post))
+{
+
+
+    @Html.ValidationSummary();
+
+    <div>
+        @Html.LabelFor(m=>m.CustomerName)
+        @Html.TextBoxFor(m => m.CustomerName)
+    </div>
+
+
+    <div>
+        @Html.LabelFor(m => m.CustomerEmail)
+        @Html.TextBoxFor(m => m.CustomerEmail)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.CustomerMessage)
+        @Html.TextAreaFor(m => m.CustomerMessage)
+    </div>
+
+    <input type="submit" value="Send" />
+}
